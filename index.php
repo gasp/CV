@@ -46,7 +46,7 @@
 					<div><i class="fa fa-map-marker"></i>Puteaux, France</div>
 					<div><i class="fa fa-envelope-o"></i><a href="mailto:fanny.weisenburger@supinternet.fr">fanny.weisenburger@supinternet.fr</a></div>
 					<div><i class="fa fa-clock-o"></i>Joined on February 23, 1992</div>
-					<div><i class="fa fa-briefcase"></i>Available for hire from July</div>
+					<div><i class="fa fa-briefcase"></i>Wants to move in Dublin for 2016<!-- Available for hire from July --></div>
 				</section>
 				<section id="organizations">
 					<h2>Organizations</h2>
@@ -69,6 +69,7 @@
 					<section class="_r _small bloc">
 						<h2>Repositories contributed to</h2>
 						<ul>
+							<li><a href="http://www.eurelis.com/" target="_blank" class="icone_btn" title="Eurelis"><i class="fa fa-group"></i><span class="repo">Eurelis</span><div class="description">CDI - Front-End Developer</div></a></li>
 							<li><a href="http://www.meltygroup.com/" target="_blank" class="icone_btn" title="MeltyGroup"><i class="fa fa-group"></i><span class="repo">MeltyGroup</span><div class="description">3rd year internship</div></a></li>
 							<li><a href="http://www.soonvibes.com/" target="_blank" class="icone_btn" title="Soonvibes"><i class="fa fa-group"></i><span class="repo">Soonvibes</span><div class="description">2nd year internship</div></a></li>
 							<li><a href="http://www.ruedelapaix.com/" target="_blank" class="icone_btn" title="Yakota"><i class="fa fa-group"></i><span class="repo">Yakota</span><div class="description">1st year internship</div></a></li>
@@ -139,7 +140,11 @@
 							<div class="link"></div>
 							<div class="commit" data-title="3rd Year"></div>
 							<div class="link"></div>
-							<div class="commit show_tooltip" data-title="end-of-study project"></div>
+							<div class="commit" data-title="end-of-study project"></div>
+							<div class="link"></div>
+							<div class="commit" data-title="real life --> CDI"></div>
+							<div class="link"></div>
+							<div class="commit show_tooltip" data-title="Eurelis"></div>
 						</div>
 						<div class="timeline">
 							<div class="bottom _1">
@@ -165,6 +170,17 @@
 					<h1>Contribution Activity</h1>
 					<a href="files/CV-FannyWeisenburger.pdf" target="_blank" title="download CV in PDF format" class="icone_btn btn"><i class="fa fa-download"></i>download CV</a>
 					<section>
+						<div class="h2"><div class="inner">Eurelis <span> - From 01/01/2014</span></div></div>
+						<div>
+							<div>Eurelis is a Web Agency.</div>
+							<div>
+								Front-end developer, Development of websites with some frameworks or CMS (in particular with Symfony and Drupal) and crossplatform applications (with Angular). Use of HTML, CSS, JS/JQuery, Angular, Responsive WebDesign, Foundation, Grunt.
+							</div>
+							<div>
+								I've worked on several type of projects from little mobile apps to high traffic websites. For example I've worked on the redesign of <a href="http://illicado.com">Illicado</a> in responsive design, or on the development of a new site for <a href="http://Cetelem.com">Cetelem</a>. I also worked on a mobile app for an Art Gallery as part of a photographic exposure <a href="https://itunes.apple.com/fr/app/vu-la-galerie/id938183276?l=en&mt=8">Galerie VU' - iOS</a>, <a href="https://play.google.com/store/apps/details?id=com.eurelis.mobile.vulagalerie">Galerie VU' - Android</a>
+							</div>
+						</div>
+
 						<div class="h2"><div class="inner">MeltyGroup <span> - From 01/10/2013 to 30/06/2014</span></div></div>
 						<div>
 							<div>Meltygroup is the first online media group for young people. (more than 15 millions readers by month)</div>
