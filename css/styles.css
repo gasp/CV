@@ -120,9 +120,12 @@ a:hover .repo{
 	font-weight: normal;
 	margin: 15px 0;
 }
-#right_side > section{
+#right_side > section {
 	padding: 20px 0;
 	border-top: 1px solid #eee;
+}
+#right_side > section:first-child {
+	border-top: none;
 }
 #right_side .information div {
 	margin: 5px 0;
