@@ -1,0 +1,4 @@
+#ignore deployment config files
+config/*
+
+.DS_STORE
