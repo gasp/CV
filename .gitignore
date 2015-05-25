@@ -1,4 +1,6 @@
 #ignore deployment config files
 config/*
+css/*
+.sass-cache/*
 
 .DS_STORE
