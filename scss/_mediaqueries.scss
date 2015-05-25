@@ -1,0 +1,63 @@
+@media screen and (max-width: 1024px) {
+  #container {
+    padding: 0 15px;
+  }
+  .desktop {
+    display: none;
+  }
+  .bloc._small {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #right_side {
+    float: none;
+    width: 100%;
+    text-align: center;
+    section {
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      border-top: none;
+    }
+  }
+  #content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .menu_container img.logo {
+    display: block;
+    margin: auto;
+  }
+  header.top span {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    display: inherit;
+    margin: auto;
+  }
+  #right_side {
+    section {
+      width: 100%;
+      text-align: center;
+    }
+    #profil_picture {
+      max-width: 155px;
+    }
+  }
+  a.icone_btn {
+    max-width: 200px;
+  }
+  .activity .btn {
+    /*width: 100%;*/
+    max-width: none;
+    text-align: center;
+    position: relative;
+  }
+}

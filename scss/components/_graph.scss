@@ -1,0 +1,120 @@
+.timeline_container {
+  width: 675px;
+  margin: -30px auto 0;
+  .tips {
+    margin: 10px 0;
+  }
+}
+
+.timeline {
+  margin: 80px auto 0;
+  div {
+    display: inline-block;
+  }
+  .commit {
+    border-radius: 5px;
+    border: 2px solid #000;
+    height: 5px;
+    position: relative;
+    width: 5px;
+    &:before {
+      background: #1C1C1C;
+      border-radius: 5px;
+      content: attr(data-title);
+      color: #FFF;
+      display: none;
+      left: -23px;
+      padding: 5px 10px;
+      position: absolute;
+      top: -34px;
+      white-space: nowrap;
+    }
+    &:after {
+      border-width: 5px;
+      border: solid transparent;
+      border-top-color: #1C1C1C;
+      content: " ";
+      display: none;
+      height: 0;
+      left: -2px;
+      position: absolute;
+      top: -11px;
+      width: 0;
+    }
+    &.show_tooltip {
+      &:before, &:after {
+        display: block;
+      }
+      &:before {
+        background: #4183c4;
+      }
+      &:after {
+        border-top-color: #4183c4;
+      }
+    }
+    &:hover {
+      &:after, &:before {
+        display: block;
+        z-index: 2;
+      }
+    }
+  }
+  .link {
+    border-top: 1px solid #000;
+    margin: 6px 0 0 0;
+    vertical-align: top;
+    width: 15px;
+  }
+  .top {
+    &._1 {
+      margin-left: 86px;
+      position: relative;
+    }
+    &._2 {
+      margin-left: 243px;
+      position: relative;
+    }
+  }
+  .bottom._1 {
+    margin-left: 312px;
+    position: relative;
+  }
+}
+
+.timeline_link {
+  width: 90px;
+  border-top: 1px solid #000;
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  position: absolute;
+  top: 51px;
+  left: -70px;
+}
+
+.timeline .bottom .timeline_link {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  transform: rotate(60deg);
+  top: -40px;
+  left: -70px;
+}
+
+.activity {
+  position: relative;
+  font-size: 14px;
+  line-height: 16px;
+  .btn {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+    i {
+      color: #000;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
