@@ -82,4 +82,126 @@ var CircleAnimation = function() {
     }
     /*circle*/
     stage.add(shapesLayer);
+};
+
+var PopularRepositories = function() {
+    var repositories = {"jobs": [
+        [
+            // "Sup'internet",
+            "HTML / CSS",
+            "PHP / MySQL",
+            "Webdesign / Photoshop"
+        ],
+        [
+            // "Yakota",
+            "HTML / CSS",
+            "PHP / Zend"
+        ],
+        [
+            // "Yakota",
+            "HTML / CSS",
+            "PHP / Zend"
+        ]
+    ]};
+
+    var spaceBetweenPoints;
+    var nextTopPoint;
+    var nextBottomPoint;
+
+    // nextBottomPoint = lastTopPoint - ((nextTopPoint - lastTopPoint) / 2)
+
+    var topPos = 10;
+    var middlePos = 50;
+    var bottomPos = 90;
+
+    $xPos = 95;
+    $yPos = middlePos;
+    spaceBetweenPoints = 55; 
+
+    function drawLine(startX, startY, endY, endX) {
+        endX = typeof endX !== 'undefined' ? endX : startX + spaceBetweenPoints;
+        canvas_context.beginPath();
+        canvas_context.moveTo(startX,startY);
+        canvas_context.lineTo(endX,endY);
+        canvas_context.stroke();
+    }
+
+    function drawBullet(X, Y) {
+        canvas_context.beginPath();
+        canvas_context.arc(X,Y,5,0,2*Math.PI);
+        canvas_context.stroke();
+    }
+
+    function drawLineAndBullet(startX, startY, endY) {
+        //create line ...
+        drawLine(startX, startY, endY);
+
+        //... and his own bullet
+        drawBullet(startX + spaceBetweenPoints,endY);
+
+        //update positions
+        $xPos += spaceBetweenPoints;
+        $yPos = endY;
+    }
+
+
+    var canvas = document.getElementById("popularRepositories");
+    if (canvas.getContext) {
+        var canvas_context = canvas.getContext("2d");
+        //initialize with first bullet
+        canvas_context.beginPath();
+        canvas_context.arc($xPos,$yPos,5,0,2*Math.PI);
+        canvas_context.stroke();
+        //create first line
+        drawLineAndBullet($xPos, $yPos, middlePos);
+
+        var beginPos = 0;
+        var lastTopPos = 0;
+        var lastBottomPos = 0;
+        for (var i = 0; i < repositories.jobs.length; i++) {
+            console.log(repositories.jobs[i]);
+            $yPos = middlePos;
+            if (beginPos !== 0) {
+                $xPos = beginPos + ($xPos - beginPos) / 2;
+                
+            }
+            if ((i % 2) != 1) {
+                //prevent superposition 
+                if ($xPos <= lastTopPos) {
+                    $xPos = lastTopPos + spaceBetweenPoints;
+                }
+                //create middle line and first bullet
+                if (beginPos !== 0) {
+                    drawLine(beginPos, middlePos, middlePos, $xPos);
+                    drawBullet($xPos, middlePos); 
+                }
+                beginPos = $xPos;
+                drawLineAndBullet($xPos, $yPos, topPos);
+                drawLineAndBullet($xPos, $yPos, topPos);
+                drawLineAndBullet($xPos, $yPos, topPos);
+                drawLineAndBullet($xPos, $yPos, topPos);                
+                lastTopPos = $xPos;
+            } 
+            else {
+                //prevent superposition 
+                if ($xPos <= lastBottomPos) {
+                    $xPos = lastBottomPos + spaceBetweenPoints;
+                }
+                //create middle line and first bullet
+                if (beginPos !== 0) {
+                    drawLine(beginPos, middlePos, middlePos, $xPos);
+                    drawBullet($xPos, middlePos); 
+                }
+                beginPos = $xPos;
+                drawLineAndBullet($xPos, $yPos, bottomPos);
+                drawLineAndBullet($xPos, $yPos, bottomPos);
+                drawLineAndBullet($xPos, $yPos, bottomPos);
+                lastBottomPos = $xPos;
+            }
+        }
+    }
+};
+
+$(function(){
+    var popularRepositories = PopularRepositories();
 });
