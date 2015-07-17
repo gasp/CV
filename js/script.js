@@ -1,4 +1,4 @@
-$(function(){
+var CircleAnimation = function() {
     var stage = new Kinetic.Stage({
             container: 'container',
             width: 400,
