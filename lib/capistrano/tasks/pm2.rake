@@ -22,7 +22,7 @@ namespace :pm2 do
 
   def start_app
     within current_path do
-      execute :pm2, :start, fetch(:app_command)
+      execute :pm2, :start, fetch(:main_file)
     end
   end
 
