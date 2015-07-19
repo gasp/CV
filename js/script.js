@@ -87,20 +87,34 @@ var CircleAnimation = function() {
 var PopularRepositories = function() {
     var repositories = {"jobs": [
         [
-            // "Sup'internet",
+            "Sup'internet",
             "HTML / CSS",
             "PHP / MySQL",
-            "Webdesign / Photoshop"
+            "Webdesign",
+            "JS / jQuery",
+            "C# / .Net"
+
         ],
         [
-            // "Yakota",
+            "Soonvibes",
+            "Zend",
             "HTML / CSS",
-            "PHP / Zend"
+            "JS"
         ],
         [
-            // "Yakota",
+            "Melty",
+            "JS / jQuery",
             "HTML / CSS",
-            "PHP / Zend"
+            "PHP / MySQL"
+        ],
+        [
+            "Eurelis",
+            "JS/jQuery",
+            "AngularJS",
+            "HTML / CSS",
+            "Foundation",
+            "Drupal",
+            "Magento"
         ]
     ]};
 
@@ -110,13 +124,13 @@ var PopularRepositories = function() {
 
     // nextBottomPoint = lastTopPoint - ((nextTopPoint - lastTopPoint) / 2)
 
-    var topPos = 10;
-    var middlePos = 50;
-    var bottomPos = 90;
+    var topPos = 30;
+    var middlePos = 70;
+    var bottomPos = 110;
 
-    $xPos = 95;
+    $xPos = 10;
     $yPos = middlePos;
-    spaceBetweenPoints = 55; 
+    spaceBetweenPoints = 40; 
 
     function drawLine(startX, startY, endY, endX) {
         endX = typeof endX !== 'undefined' ? endX : startX + spaceBetweenPoints;
@@ -148,6 +162,11 @@ var PopularRepositories = function() {
     var canvas = document.getElementById("popularRepositories");
     if (canvas.getContext) {
         var canvas_context = canvas.getContext("2d");
+        
+        //define text style
+        canvas_context.font = "10px sans-serif";
+        canvas_context.textAlign = "center";
+
         //initialize with first bullet
         canvas_context.beginPath();
         canvas_context.arc($xPos,$yPos,5,0,2*Math.PI);
@@ -176,10 +195,23 @@ var PopularRepositories = function() {
                     drawBullet($xPos, middlePos); 
                 }
                 beginPos = $xPos;
-                drawLineAndBullet($xPos, $yPos, topPos);
-                drawLineAndBullet($xPos, $yPos, topPos);
-                drawLineAndBullet($xPos, $yPos, topPos);
-                drawLineAndBullet($xPos, $yPos, topPos);                
+                console.log(repositories.jobs[i].length);
+                for (var job = 0; job < repositories.jobs[i].length; job++) {
+                    drawLineAndBullet($xPos, $yPos, topPos);
+                    console.log(repositories.jobs[i][job]);
+                    if ((job % 2) != 1) {
+                        canvas_context.fillText(repositories.jobs[i][job], $xPos, topPos - 15);
+                    }
+                    else {
+                        canvas_context.fillText(repositories.jobs[i][job], $xPos, topPos + 17);
+                    }
+                    
+                }
+
+                // drawLineAndBullet($xPos, $yPos, topPos);
+                // drawLineAndBullet($xPos, $yPos, topPos);
+                // drawLineAndBullet($xPos, $yPos, topPos);
+                // drawLineAndBullet($xPos, $yPos, topPos);                
                 lastTopPos = $xPos;
             } 
             else {
@@ -193,9 +225,21 @@ var PopularRepositories = function() {
                     drawBullet($xPos, middlePos); 
                 }
                 beginPos = $xPos;
-                drawLineAndBullet($xPos, $yPos, bottomPos);
-                drawLineAndBullet($xPos, $yPos, bottomPos);
-                drawLineAndBullet($xPos, $yPos, bottomPos);
+
+                for (var job = 0; job < repositories.jobs[i].length; job++) {
+                    drawLineAndBullet($xPos, $yPos, bottomPos);
+                    console.log(repositories.jobs[i][job]);
+                    if ((job % 2) != 1) {
+                        canvas_context.fillText(repositories.jobs[i][job], $xPos, bottomPos + 17);
+                    }
+                    else {
+                        canvas_context.fillText(repositories.jobs[i][job], $xPos, bottomPos - 15);
+                    }
+                    
+                }
+                // drawLineAndBullet($xPos, $yPos, bottomPos);
+                // drawLineAndBullet($xPos, $yPos, bottomPos);
+                // drawLineAndBullet($xPos, $yPos, bottomPos);
                 lastBottomPos = $xPos;
             }
         }
