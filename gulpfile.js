@@ -13,10 +13,11 @@ gulp.task('compass', function() {
 });
 
 gulp.task('watch', function() {
-  livereload.listen(8888);
-  gulp.watch('scss/*.scss', ['compass']).on('change', function(e){
-  	livereload.changed(e.path);
-   });
+  // livereload.listen(8888);
+  // gulp.watch('scss/**/*.scss', ['compass']).on('change', function(e){
+  // 	livereload.changed(e.path);
+  //  });
+  gulp.watch('scss/*.scss', ['compass']);
 });
 
 gulp.task('default', ['watch']);
