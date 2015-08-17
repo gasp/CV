@@ -37,9 +37,10 @@
 			<!--content-->
 			<section class="_l" id="content">
 				<div class="popularRepoContainer">
-					<canvas id="popularRepositories" width="1000" height="300">
-					</canvas>
-					<ul>
+					<div id="canvasContainer" style="max-width:100%; overflow:hidden;cursor:move;">
+						<canvas id="popularRepositories" width="1000" height="300">
+						</canvas>
+						<ul>
 						<li class="commitList hide" id="html-css">
 							<img src="../img/profil.jpg" id="profil_picture" alt="Fanny Weisenburger" width="50">
 							<span>
@@ -57,6 +58,8 @@
 							<span class="date">2011</span>
 						</li>
 					</ul>
+					</div>
+					
 				</div>
 				<div class="bloc_container">
 					<section class="_l _small bloc">

@@ -281,56 +281,63 @@ var PopularRepositories = function() {
         canvas_context.font = "10px sans-serif";
         canvas_context.textAlign = "center";
 
-        canvas_context.fillStyle = '#3498DB';
-        canvas_context.strokeStyle = '#3498DB';
+        canvas_context.fillStyle = '#333';
+        canvas_context.strokeStyle = '#333';
         
         drawCanvas();
 
         // request mousemove events
         $("#popularRepositories").mousemove(handleMouseMove);
+        $("#popularRepositories").on('touchstart', handleMouseMove);
 
         // show tooltip when mouse hovers over dot
         function handleMouseMove(e){
-            mouseX=parseInt(e.clientX-offsetX);
-            mouseY=parseInt(e.clientY-offsetY);
 
+            mouseX=parseInt((e.pageX - $('#canvasContainer').offset().left) + $('#canvasContainer').scrollLeft());
+            mouseY=parseInt((e.pageY - $('#canvasContainer').offset().top));
             // Put your mousemove stuff here
             var hit = false;
-            // coucou();
-            for (var i = 0; i < dots.length; i++) {
+            for (var i = 0; i < dots.length; i++) { 
                 var dot = dots[i];
                 var dx = mouseX - dot.x;
                 var dy = mouseY - dot.y;
                 if (dx * dx + dy * dy < dot.rXr) {
-                    console.log(dot);
-                    //@todo --> tooltips
                     canvas_context.beginPath();
                     canvas_context.clearRect(dot.x - dot.r, dot.y - dot.r, dot.r * 2, dot.r * 2);
                     canvas_context.closePath();
                     dot.r = 7;
                     dot.rXr = 100;
+                    canvas_context.fillStyle = dot.color;
+                    canvas_context.strokeStyle = dot.color;
                     canvas_context.beginPath();
                     dot.isHovered = true;
                     drawBullet(dot.x, dot.y, dot.r);
                     canvas_context.closePath();
+                    $('#canvasContainer').css("cursor","pointer");
                     $('.commitList#' + dot.tip).removeClass('hide').siblings().addClass('hide');
-                    $('#' + dot.tip).css("left", (dot.x) + "px");
+                    var left = (dot.x) - $('#canvasContainer').scrollLeft();
+                    if ($('#canvasContainer').width() - (dot.x - $('#canvasContainer').scrollLeft()) < 320) {
+                        if ($('#canvasContainer').width() < 320) {
+                            left = 0;
+                        }
+                        else {
+                            left = left - (320 - (dot.x - $('#canvasContainer').scrollLeft()));
+                        }
+                    }
+                    $('#' + dot.tip).css("left", left + "px");
                     $('#' + dot.tip).css("top", (dot.y + 15) + "px");
                     hit = true;
                 }
             }
             if (!hit) { 
-                // console.log('!hit'); 
+                $('#canvasContainer').css("cursor","move");
                 $('.commitList').not('.hide').addClass('hide'); 
                 for (var i = dots.length - 1; i >= 0; i--) {
                     if(dots[i].isHovered === true) {
                         var dot = dots[i];
-                        console.log("spotted");
                         canvas_context.beginPath();
                         canvas_context.clearRect(dot.x - dot.r - 1, dot.y - dot.r - 1, dot.r * 2 + 2, dot.r * 2 + 2);
                         canvas_context.closePath();
-                        // canvas_context.clearRect(0, 0, canvas.width, canvas.height);
-                        // console.log("t'es niqué");
                         dot.r = 5;
                         dot.rXr = 25;
                         canvas_context.beginPath();
@@ -341,6 +348,48 @@ var PopularRepositories = function() {
                 };
             }
         }
+
+        function dragCanvas() {
+
+            $('#canvasContainer').on('mousedown', function(click) {
+                origX = click.pageX + $('#canvasContainer').scrollLeft();
+                $('#canvasContainer').on('mousemove ', function(e){
+                    curX = e.pageX + $('#canvasContainer').scrollLeft();
+                    var diff = (origX - curX);
+                    var newpos = $('#canvasContainer').scrollLeft() + diff;
+                    if(newpos > ($('canvas').width() - $('#canvasContainer').width())) {
+                        newpos = ($('canvas').width() - $('#canvasContainer').width());
+                    }
+                    if(newpos < 0) {
+                        newpos = 0;
+                    }
+                    $('#canvasContainer').scrollLeft(newpos);
+                });
+            });
+            $('#canvasContainer').on('touchstart', function(click) {
+                endCoords = click.originalEvent.targetTouches[0];
+                origX = endCoords.pageX + $('#canvasContainer').scrollLeft();
+                $('#canvasContainer').on('touchmove', function(e){
+                    endCoords = e.originalEvent.targetTouches[0];
+                    curX = endCoords.pageX + $('#canvasContainer').scrollLeft();
+
+                    var diff = (origX - curX);
+                    var newpos = $('#canvasContainer').scrollLeft() + diff;
+                    if(newpos > ($('canvas').width() - $('#canvasContainer').width())) {
+                        newpos = ($('canvas').width() - $('#canvasContainer').width());
+                    }
+                    if(newpos < 0) {
+                        newpos = 0;
+                    }
+                    $('#canvasContainer').scrollLeft(newpos);
+                });
+            });
+            $('#canvasContainer').on('mouseup touchend, mouseleave click', function(){
+                $('#canvasContainer').off('mousemove');
+            });
+
+        };
+        dragCanvas();
 
     }
 };
