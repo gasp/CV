@@ -126,6 +126,8 @@ var PopularRepositories = function() {
 
     var dots = [];
 
+    var colors = ['#1ABC9C','#2ECC71','#3498DB','#9B59B6','#F1C40F','#E67E22','#E74C3C'];
+    $firstBullet = false;
     var topPos = 30;
     var middlePos = 70;
     var bottomPos = 110;
@@ -135,7 +137,23 @@ var PopularRepositories = function() {
     spaceBetweenPoints = 40; 
 
     function drawLine(startX, startY, endY, endX) {
-        endX = typeof endX !== 'undefined' ? endX : startX + spaceBetweenPoints;
+        if (startY > endY) {
+            startY = startY - 10;
+            startX += 5;
+            endX = startX + spaceBetweenPoints - 15;
+            $firstBullet = true;
+        } else if (startY < endY) {
+            startY += 10;
+            startX += 5;
+            endX = startX + spaceBetweenPoints - 15;
+            $firstBullet = true;
+        } else {
+            startX += 10;
+            endX = typeof endX !== 'undefined' ? endX - 10 : startX + spaceBetweenPoints - 20;
+            $firstBullet = false;
+        }
+        
+        
         canvas_context.beginPath();
         canvas_context.moveTo(startX,startY);
         canvas_context.lineTo(endX,endY);
@@ -169,12 +187,12 @@ var PopularRepositories = function() {
                 r: 5,
                 rXr: 25,
                 tip: text,
+                color: $currentColor,
                 isHovered: false
             });
 
 
         } else if (typeof dots[dotNumber] !== "undefined") {
-            // console.log("exist");
             radius = dots[dotNumber].r;
         }
 
@@ -187,13 +205,9 @@ var PopularRepositories = function() {
     }
 
     function drawCanvas() {
-        // console.log("drawCanvas");
         $dotNumber = 0;
         //initialize with first bullet
-        // canvas_context.beginPath();
         drawBullet($xPos,$yPos)
-        // canvas_context.arc($xPos,$yPos,5,0,2*Math.PI);
-        // canvas_context.stroke();
         //create first line
         drawLineAndBullet($xPos, $yPos, middlePos);
 
@@ -206,26 +220,25 @@ var PopularRepositories = function() {
                 $xPos = beginPos + ($xPos - beginPos) / 2;
                 
             }
+            
             if ((i % 2) != 1) {
                 //prevent superposition 
                 if ($xPos <= lastTopPos) {
                     $xPos = lastTopPos + spaceBetweenPoints;
                 }
                 //create middle line and first bullet
+                canvas_context.fillStyle = '#333';
+                canvas_context.strokeStyle = '#333';
                 if (beginPos !== 0) {
                     drawLine(beginPos, middlePos, middlePos, $xPos);
                     drawBullet($xPos, middlePos); 
                 }
+                $currentColor = colors[i];
+                canvas_context.fillStyle = $currentColor;
+                canvas_context.strokeStyle = $currentColor;
                 beginPos = $xPos;
                 for (var job = 0; job < repositories.jobs[i].length; job++) {
                     drawLineAndBullet($xPos, $yPos, topPos, repositories.jobs[i][job], $dotNumber);
-                    // if ((job % 2) != 1) {
-                    //     canvas_context.fillText(repositories.jobs[i][job], $xPos, topPos - 15);
-                    // }
-                    // else {
-                    //     canvas_context.fillText(repositories.jobs[i][job], $xPos, topPos + 17);
-                    // }
-                    
                 }              
                 lastTopPos = $xPos;
             } 
@@ -235,21 +248,20 @@ var PopularRepositories = function() {
                     $xPos = lastBottomPos + spaceBetweenPoints;
                 }
                 //create middle line and first bullet
+                canvas_context.fillStyle = '#333';
+                canvas_context.strokeStyle = '#333';
                 if (beginPos !== 0) {
                     drawLine(beginPos, middlePos, middlePos, $xPos);
                     drawBullet($xPos, middlePos); 
                 }
+
+                $currentColor = colors[i];
+                canvas_context.fillStyle = $currentColor;
+                canvas_context.strokeStyle = $currentColor;
                 beginPos = $xPos;
 
                 for (var job = 0; job < repositories.jobs[i].length; job++) {
                     drawLineAndBullet($xPos, $yPos, bottomPos, repositories.jobs[i][job], $dotNumber);
-                    // if ((job % 2) != 1) {
-                    //     canvas_context.fillText(repositories.jobs[i][job], $xPos, bottomPos + 17);
-                    // }
-                    // else {
-                    //     canvas_context.fillText(repositories.jobs[i][job], $xPos, bottomPos - 15);
-                    // }
-                    
                 }
                 lastBottomPos = $xPos;
             }
