@@ -1,11 +1,10 @@
 var CircleAnimation = function() {
     var stage = new Kinetic.Stage({
-            container: 'container',
+            container: 'circleAnimation',
             width: 400,
             height: 400
           });
     var shapesLayer = new Kinetic.Layer();
-
     /*circle*/
     var circle = new Kinetic.Circle({
         x: stage.getWidth() /2,
@@ -395,5 +394,10 @@ var PopularRepositories = function() {
 };
 
 $(function(){
-    var popularRepositories = PopularRepositories();
+    if($('#popularRepositories').length > 0) {
+        var popularRepositories = PopularRepositories();
+    }
+    if($('#circleAnimation').length > 0) {
+        CircleAnimation();
+    }
 });

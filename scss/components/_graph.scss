@@ -1,10 +1,8 @@
-.timeline_container {
-  width: 675px;
-  margin: -30px auto 0;
+
   .tips {
-    margin: 10px 0;
+    padding: 5px;
   }
-}
+
 
 .timeline {
   margin: 80px auto 0;
@@ -123,32 +121,39 @@
 /*new graph*/
 .popularRepoContainer {
   position: relative;
+  #canvasContainer {
+    .commitList {
+      border: 2px solid #e5e5e5;
+      border-radius: 5px;
+      padding: 10px;
+      position: relative;
+      line-height: 20px;
+      max-width: 320px;
+      position: absolute;
+      background-color: #fff;
+      > img, > span {
+        display: inline-block;
+        vertical-align: top;
+      }
+      > span {
+        max-width: 240px;
+      }
+      img {
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .date {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #e5e5e5;
+        font-weight: bold;
+      }
+    }
+  }
 }
-.commitList {
-  border: 2px solid #e5e5e5;
-  border-radius: 5px;
-  padding: 10px;
-  position: relative;
-  line-height: 20px;
-  max-width: 320px;
-  position: absolute;
-  background-color: #fff;
-  > img, > span {
-    display: inline-block;
-    vertical-align: top;
-  }
-  > span {
-    max-width: 240px;
-  }
-  img {
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  .date {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #e5e5e5;
-    font-weight: bold;
-  }
+
+.bigIcon {
+  font-size: 30px;
+  opacity: 0.4;
 }

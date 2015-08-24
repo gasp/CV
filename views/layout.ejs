@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include partials/head %>
+	</head>
+	<body>
+		<header class="top">
+			<div class="menu_container">
+				<a href="/" title="Fanny Weisenburger"><img src="../img/logoportfolio2.png" class="logo" alt="Fanny Weisenburger" /></a>
+				<span>
+					Front &amp; Back-end developer
+				</span>
+			</div>
+		</header>
+		<section id="container">
+			<!--right side-->
+			<section class="_l" id="right_side">
+				<section>
+					<img src="../img/profil.jpg" id="profil_picture" alt="Fanny Weisenburger"/>
+					<h1>
+						Fanny Weisenburger
+					</h1>
+				</section>
+				<section class="information">
+					<div><i class="fa fa-map-marker"></i>Puteaux, France</div>
+					<div><i class="fa fa-envelope-o"></i><a href="mailto:fanny.weisenburger@supinternet.fr">fanny.weisenburger@supinternet.fr</a></div>
+					<div><i class="fa fa-clock-o"></i>Joined on February 23, 1992</div>
+					<div><i class="fa fa-briefcase"></i>Wants to move in Dublin for 2016<!-- Available for hire from July --></div>
+				</section>
+				<section id="organizations">
+					<h2>Organizations</h2>
+					<a href="https://www.linkedin.com/pub/fanny-weisenburger/4a/561/9a4" target="_blank" class="icone_btn _1" title="linkedin"><img src="img/linkedin.png" class="_l" alt="linkedin" /></a>
+					<a href="https://github.com/roxyska" target="_blank" class="icone_btn" title="github"><img src="img/github.png" class="_l" alt="github" /></a>
+					<a href="http://stackoverflow.com/users/1988476/roxyska" target="_blank" class="icone_btn" title="stackoverflow"><img src="img/stackoverflow.png" class="_l" alt="stackoverflow" /></a>
+				</section>
+			</section>
+			<!--content-->
+			<section class="_l" id="content">
+				<%- body %>
+			</section>
+		</section>
+	</body>
+</html>
