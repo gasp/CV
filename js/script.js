@@ -320,7 +320,12 @@ var PopularRepositories = function() {
                             left = 0;
                         }
                         else {
-                            left = left - (320 - (dot.x - $('#canvasContainer').scrollLeft()));
+                            if($('#canvasContainer').scrollLeft() >= 320) {
+                                left = left - (320 - (dot.x - $('#canvasContainer').scrollLeft()));
+                            }
+                            else {
+                                left = left - 320;
+                            }
                         }
                     }
                     $('#' + dot.tip).css("left", left + "px");
