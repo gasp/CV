@@ -306,15 +306,18 @@ var PopularRepositories = function() {
           $('.commitList#' + dot.tip).removeClass('hide').siblings().addClass('hide');
           var left = (dot.x) - $('#canvasContainer').scrollLeft();
           if ($('#canvasContainer').width() - (dot.x - $('#canvasContainer').scrollLeft()) < 320) {
-            if ($('#canvasContainer').width() < 320) {
+            if ($('#canvasContainer').width() < 400) {
               left = 0;
             }
             else {
               if($('#canvasContainer').scrollLeft() >= 320) {
                 left = left - (320 - (dot.x - $('#canvasContainer').scrollLeft()));
               }
-              else {
+              else if ((left - 320) >= 0) {
                 left = left - 320;
+              }
+              else {
+                left = 0;
               }
             }
           }
