@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var compass = require('gulp-compass');
-var livereload = require('gulp-livereload');
+// var livereload = require('gulp-livereload');
  
 gulp.task('compass', function() {
   gulp.src('./*.scss')
@@ -21,3 +21,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['watch']);
+gulp.task('build', ['compass'])
