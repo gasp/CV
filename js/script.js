@@ -111,9 +111,7 @@ var PopularRepositories = function() {
     "js-jquery-eurelis",
     "angularJS",
     "html-css-eurelis",
-    "foundation",
-    "drupal",
-    "magento"
+    "drupal-magento"
     ]
     ]};
 
