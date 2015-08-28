@@ -266,7 +266,7 @@ var PopularRepositories = function() {
 
     if(window.devicePixelRatio == 2) {
       canvas.setAttribute('width', 2000);
-      canvas.setAttribute('height', 390);
+      canvas.setAttribute('height', 340);
       canvas_context.scale(2,2);
     }
 
@@ -297,7 +297,7 @@ var PopularRepositories = function() {
         var dot = dots[i];
         var dx = mouseX - dot.x;
         var dy = mouseY - dot.y;
-        if (dx * dx + dy * dy < dot.rXr) {
+        if (dx * dx + dy * dy < (dot.rXr + 5)) {
           canvas_context.beginPath();
           canvas_context.clearRect(dot.x - dot.r, dot.y - dot.r, dot.r * 2, dot.r * 2);
           canvas_context.closePath();
