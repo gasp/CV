@@ -399,6 +399,7 @@ var PopularRepositories = function() {
 };
 
 $(function(){
+  FastClick.attach(document.body);
   if($('#popularRepositories').length > 0) {
     var popularRepositories = PopularRepositories();
   }
