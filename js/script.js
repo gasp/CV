@@ -263,6 +263,13 @@ var PopularRepositories = function() {
   var canvas = document.getElementById("popularRepositories");
   if (canvas.getContext) {
     var canvas_context = canvas.getContext("2d");
+
+    if(window.devicePixelRatio == 2) {
+      canvas.setAttribute('width', 2000);
+      canvas.setAttribute('height', 390);
+      canvas_context.scale(2,2);
+    }
+
     var canvasOffset = $("#popularRepositories").offset();
     var offsetX = canvasOffset.left;
     var offsetY = canvasOffset.top;

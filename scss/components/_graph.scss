@@ -121,6 +121,10 @@
 /*new graph*/
 .popularRepoContainer {
   position: relative;
+  #popularRepositories {
+    width: 1000px;
+    height: 170px;
+  }
   #canvasContainer {
     .commitList {
       border: 2px solid #e5e5e5;
