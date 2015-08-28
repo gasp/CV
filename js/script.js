@@ -297,7 +297,7 @@ var PopularRepositories = function() {
         var dot = dots[i];
         var dx = mouseX - dot.x;
         var dy = mouseY - dot.y;
-        if (dx * dx + dy * dy < (dot.rXr + 5)) {
+        if (dx * dx + dy * dy < (dot.rXr + 10)) {
           canvas_context.beginPath();
           canvas_context.clearRect(dot.x - dot.r, dot.y - dot.r, dot.r * 2, dot.r * 2);
           canvas_context.closePath();
