@@ -446,9 +446,53 @@ var PopularRepositories = function() {
   }
 };
 
+var Switcher = function() {
+  $('#contributionSwitcher button').on('click', function() {
+    if(!$(this).hasClass('.active') && $(this).attr('data-switch') === 'list') {
+      $('#canvasContainer ul li').each(function() {
+        $(this).removeClass('hide');
+      });
+      $('.popularRepoContainer #canvasContainer .commitList').attr('style', '');
+      $('.popularRepoContainer #canvasContainer .commitList').css({
+        "position": "relative",
+        "display": "inline-block",
+        "border": "none"
+      });
+
+      if($(window).width() >= 700) {
+        $('.popularRepoContainer #canvasContainer .commitList').css({
+          "width": "50%"
+        });
+      }
+      else {
+        $('.popularRepoContainer #canvasContainer .commitList').css({
+          "width": "100%",
+          "max-width": "none",
+          "box-sizing": "border-box"
+        });
+      }
+      $('#canvasContainer').scrollLeft(0);
+      $('.tips').addClass('hide');
+      $('#canvasContainer canvas').addClass('hide');
+    }
+    else if(!$(this).hasClass('.active') && $(this).attr('data-switch') === 'canvas') {
+      $('#canvasContainer canvas').removeClass('hide');
+      $('.tips').removeClass('hide');
+      $('#canvasContainer ul li').each(function() {
+        $(this).addClass('hide');
+      });
+      $('.popularRepoContainer #canvasContainer .commitList').attr('style', '');
+      var maxScroll = $("#popularRepositories").width() - $("#canvasContainer").width();
+      $('#canvasContainer').scrollLeft(maxScroll);
+    }
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+};
+
 $(function(){
   if($('#popularRepositories').length > 0) {
     var popularRepositories = PopularRepositories();
+    var switcher = Switcher();
     var maxScroll = $("#popularRepositories").width() - $("#canvasContainer").width();
     $('#canvasContainer').scrollLeft(maxScroll);
   }

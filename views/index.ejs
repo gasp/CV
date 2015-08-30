@@ -18,178 +18,184 @@
   </section>
 </div>
 <section class="bloc">
-  <h2>Your Contributions</h2>
+  <h2 class="relative">
+    Your Contributions 
+    <span id="contributionSwitcher">
+      <button data-switch="canvas" class="active"><i class="fa fa-code-fork"></i></button>
+      <button data-switch="list"><i class="fa fa-list"></i></button>
+    </span>
+  </h2>
 
-    <div class="popularRepoContainer">
-      <div id="canvasContainer" style="max-width:100%; overflow:hidden;cursor:move;">
-        <canvas id="popularRepositories" width="1000" height="250">
-        </canvas>
-        <ul>
-          <!-- SUP'INTERNET -->
-          <li class="commitList hide" id="sup-internet">
-            <img src="../img/supinternet.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Sup'internet</span><br>
-              Development and web technologies bachelor
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <li class="commitList hide" id="html-css">
-            <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">HTML/CSS</span><br>
-              During my three years at Sup'Internet, I've learned and practiced HTML and CSS.
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <li class="commitList hide" id="php-mysql">
-            <img src="../img/php-mysql.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">PHP/MySQL</span><br>
-              I've learned PHP with facultative courses at Sup'Internet and it permitted me to switch between the WebDesign and the Web Development Bachelor. I've continued to learn and practice PHP and MySQL during the next two years at Sup'Internet and during my several interships.
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <li class="commitList hide" id="webdesign">
-            <img src="../img/ai-psd.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Webdesign</span><br>
-              During the first year at Sup'Internet I was on the WebDesign Bachelor. I've learned to use Photoshop and Illustrator and front-end development.
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <li class="commitList hide" id="js-jquery">
-            <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">JS/jQuery</span><br>
-              I began to really develop in JS and jQuery during the second year of Sup'Internet and since then, I never stopped progressing on these technologies.
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <li class="commitList hide" id="cSharp-dotNet">
-            <img src="../img/csharp-dotnet.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">C#/.Net</span><br>
-              During the 2nd year of Sup'Internet I learned the basics of C# and .Net.
-            </span>
-            <span class="date">2011 - 2014</span>
-          </li>
-          <!-- SOONVIBES -->
-          <li class="commitList hide" id="soonvibes">
-            <img src="../img/soonvibes.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Soonvibes</span><br>
-              During my second year of Sup'Internet I did an intership at Soonvibes. Soonvibes is a young Startup specialised in electronic music. It allows DJs to post their tracks on the website and receive feedback.
-            </span>
-            <span class="date">2013</span>
-          </li>
-          <li class="commitList hide" id="zend">
-            <img src="../img/zend.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Zend</span><br>
-              Soonvibes is developed with the Zend Framework. I only used it once before this and I learned many things on PHP and object development thanks to it.
-            </span>
-            <span class="date">2013</span>
-          </li>
-          <li class="commitList hide" id="html-css-soonvibes">
-            <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">HTML5/CSS3</span><br>
-              I was able to apply things I've learnt at school. At the end of my internship we've released the V1 of Soonvibes which consisted in a really huge redesign.
-            </span>
-            <span class="date">2013</span>
-          </li>
-          <li class="commitList hide" id="js-jquery-soonvibes">
-            <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">JS/jQuery</span><br>
-              Soonvibes' website became totally Ajax loaded because we added an audio player at the bottom of the website. This was my first experience with Ajax.
-            </span>
-            <span class="date">2013</span>
-          </li>
-          <!-- MELTY -->
-          <li class="commitList hide" id="melty">
-            <img src="../img/meltygroup.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Melty</span><br>
-              Meltygroup is the first online media group for young people in France (more than 15 millions readers by month). I was in an internship at Melty as a front-end and back-end developer during 9 months in my third year at Sup'Internet.
-            </span>
-            <span class="date">2013 - 2014</span>
-          </li>
-          <li class="commitList hide" id="js-jquery-melty">
-            <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">JS/jQuery</span><br>
-              I developed in Javascript and jQuery for responsive design and animations that we cannot do in CSS. I used it mainly for statistics graphs.
-            </span>
-            <span class="date">2013 - 2014</span>
-          </li>
-          <li class="commitList hide" id="html-css-melty">
-            <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">HTML5/CSS3/SASS</span><br>
-              MeltyGroup is a huge galaxy of websites. We used SASS to decline fastly the main website in a secondary website.
-            </span>
-            <span class="date">2013 - 2014</span>
-          </li>
-          <li class="commitList hide" id="php-mysql-melty">
-            <img src="../img/php-mysql.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">PHP/MySQL</span><br>
-              Meltygroug websites are developed under a "home-made framework" based on the Zend Framework.
-            </span>
-            <span class="date">2013 - 2014</span>
-          </li>
-          <!-- EURELIS -->
-          <li class="commitList hide" id="Eurelis">
-            <img src="../img/eurelis.svg" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Eurelis</span><br>
-              I'm currently a front-end developer at Eurelis (a French web agency).
-            </span>
-            <span class="date">2014 - 2015</span>
-          </li>
-          <li class="commitList hide" id="js-jquery-eurelis">
-            <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">JS/jQuery</span><br>
-              As a front end developer I'm often asked to develop with JS and jQuery. I've worked a lot with the Google maps API and the Google graph API.
-            </span>
-            <span class="date">2014 - 2015</span>
-          </li>
-          <li class="commitList hide" id="angularJS">
-            <img src="../img/angularjs.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">AngularJS</span><br>
-              At Eurelis I had 2 trainings on AngularJS and I had to develop an application for an art gallery.
-            </span>
-            <span class="date">2014 - 2015</span>
-          </li>
-          <li class="commitList hide" id="html-css-eurelis">
-            <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">SASS/Foundation</span><br>
-              HTML5 / CSS3 and Sass / Foundation development
-            </span>
-            <span class="date">2014 - 2015</span>
-          </li>
-          <li class="commitList hide" id="drupal-magento">
-            <img src="../img/drupal-magento.png" alt="Fanny Weisenburger" width="50">
-            <span>
-              <span class="bold">Drupal/Magento</span><br>
-              On some projects (like Expasia or Illicado) I was led to work with Drupal and Magento.
-            </span>
-            <span class="date">2014 - 2015</span>
-          </li>
-        </ul>
-      </div>
-      
+  <div class="popularRepoContainer">
+    <div id="canvasContainer" style="max-width:100%; overflow:hidden;cursor:move;">
+      <canvas id="popularRepositories" width="1000" height="250">
+      </canvas>
+      <ul>
+        <!-- SUP'INTERNET -->
+        <li class="commitList hide" id="sup-internet">
+          <img src="../img/supinternet.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Sup'internet</span><br>
+            Development and web technologies bachelor
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <li class="commitList hide" id="html-css">
+          <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">HTML/CSS</span><br>
+            During my three years at Sup'Internet, I've learned and practiced HTML and CSS.
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <li class="commitList hide" id="php-mysql">
+          <img src="../img/php-mysql.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">PHP/MySQL</span><br>
+            I've learned PHP with facultative courses at Sup'Internet and it permitted me to switch between the WebDesign and the Web Development Bachelor. I've continued to learn and practice PHP and MySQL during the next two years at Sup'Internet and during my several interships.
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <li class="commitList hide" id="webdesign">
+          <img src="../img/ai-psd.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Webdesign</span><br>
+            During the first year at Sup'Internet I was on the WebDesign Bachelor. I've learned to use Photoshop and Illustrator and front-end development.
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <li class="commitList hide" id="js-jquery">
+          <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">JS/jQuery</span><br>
+            I began to really develop in JS and jQuery during the second year of Sup'Internet and since then, I never stopped progressing on these technologies.
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <li class="commitList hide" id="cSharp-dotNet">
+          <img src="../img/csharp-dotnet.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">C#/.Net</span><br>
+            During the 2nd year of Sup'Internet I learned the basics of C# and .Net.
+          </span>
+          <span class="date">2011 - 2014</span>
+        </li>
+        <!-- SOONVIBES -->
+        <li class="commitList hide" id="soonvibes">
+          <img src="../img/soonvibes.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Soonvibes</span><br>
+            During my second year of Sup'Internet I did an intership at Soonvibes. Soonvibes is a young Startup specialised in electronic music. It allows DJs to post their tracks on the website and receive feedback.
+          </span>
+          <span class="date">2013</span>
+        </li>
+        <li class="commitList hide" id="zend">
+          <img src="../img/zend.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Zend</span><br>
+            Soonvibes is developed with the Zend Framework. I only used it once before this and I learned many things on PHP and object development thanks to it.
+          </span>
+          <span class="date">2013</span>
+        </li>
+        <li class="commitList hide" id="html-css-soonvibes">
+          <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">HTML5/CSS3</span><br>
+            I was able to apply things I've learnt at school. At the end of my internship we've released the V1 of Soonvibes which consisted in a really huge redesign.
+          </span>
+          <span class="date">2013</span>
+        </li>
+        <li class="commitList hide" id="js-jquery-soonvibes">
+          <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">JS/jQuery</span><br>
+            Soonvibes' website became totally Ajax loaded because we added an audio player at the bottom of the website. This was my first experience with Ajax.
+          </span>
+          <span class="date">2013</span>
+        </li>
+        <!-- MELTY -->
+        <li class="commitList hide" id="melty">
+          <img src="../img/meltygroup.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Melty</span><br>
+            Meltygroup is the first online media group for young people in France (more than 15 millions readers by month). I was in an internship at Melty as a front-end and back-end developer during 9 months in my third year at Sup'Internet.
+          </span>
+          <span class="date">2013 - 2014</span>
+        </li>
+        <li class="commitList hide" id="js-jquery-melty">
+          <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">JS/jQuery</span><br>
+            I developed in Javascript and jQuery for responsive design and animations that we cannot do in CSS. I used it mainly for statistics graphs.
+          </span>
+          <span class="date">2013 - 2014</span>
+        </li>
+        <li class="commitList hide" id="html-css-melty">
+          <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">HTML5/CSS3/SASS</span><br>
+            MeltyGroup is a huge galaxy of websites. We used SASS to decline fastly the main website in a secondary website.
+          </span>
+          <span class="date">2013 - 2014</span>
+        </li>
+        <li class="commitList hide" id="php-mysql-melty">
+          <img src="../img/php-mysql.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">PHP/MySQL</span><br>
+            Meltygroug websites are developed under a "home-made framework" based on the Zend Framework.
+          </span>
+          <span class="date">2013 - 2014</span>
+        </li>
+        <!-- EURELIS -->
+        <li class="commitList hide" id="Eurelis">
+          <img src="../img/eurelis.svg" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Eurelis</span><br>
+            I'm currently a front-end developer at Eurelis (a French web agency).
+          </span>
+          <span class="date">2014 - 2015</span>
+        </li>
+        <li class="commitList hide" id="js-jquery-eurelis">
+          <img src="../img/js-jquery.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">JS/jQuery</span><br>
+            As a front end developer I'm often asked to develop with JS and jQuery. I've worked a lot with the Google maps API and the Google graph API.
+          </span>
+          <span class="date">2014 - 2015</span>
+        </li>
+        <li class="commitList hide" id="angularJS">
+          <img src="../img/angularjs.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">AngularJS</span><br>
+            At Eurelis I had 2 trainings on AngularJS and I had to develop an application for an art gallery.
+          </span>
+          <span class="date">2014 - 2015</span>
+        </li>
+        <li class="commitList hide" id="html-css-eurelis">
+          <img src="../img/html-css.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">SASS/Foundation</span><br>
+            HTML5 / CSS3 and Sass / Foundation development
+          </span>
+          <span class="date">2014 - 2015</span>
+        </li>
+        <li class="commitList hide" id="drupal-magento">
+          <img src="../img/drupal-magento.png" alt="Fanny Weisenburger" width="50">
+          <span>
+            <span class="bold">Drupal/Magento</span><br>
+            On some projects (like Expasia or Illicado) I was led to work with Drupal and Magento.
+          </span>
+          <span class="date">2014 - 2015</span>
+        </li>
+      </ul>
     </div>
-    <div class="tips clearfix">
-      <i class="fa fa-question-circle"></i><span>to know more, hover or touch circles</span>
+    
+  </div>
+  <div class="tips clearfix">
+    <i class="fa fa-question-circle"></i><span>to know more, hover or touch circles</span>
 
-      <i class="fa fa-arrows _r bigIcon"></i>
-    </div>
+    <i class="fa fa-arrows _r bigIcon"></i>
+  </div>
 
 </section>
 
