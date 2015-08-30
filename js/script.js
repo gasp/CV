@@ -449,6 +449,8 @@ var PopularRepositories = function() {
 $(function(){
   if($('#popularRepositories').length > 0) {
     var popularRepositories = PopularRepositories();
+    var maxScroll = $("#popularRepositories").width() - $("#canvasContainer").width();
+    $('#canvasContainer').scrollLeft(maxScroll);
   }
   if($('#circleAnimation').length > 0) {
     CircleAnimation();
