@@ -115,23 +115,46 @@ var PopularRepositories = function() {
   ]
   ]};
 
+  var images = {
+    "sup-internet": "supinternet.png",
+    "html-css": "html-css.png",
+    "php-mysql": "php-mysql.png",
+    "webdesign": "ai-psd.png",
+    "js-jquery": "js-jquery.png",
+    "cSharp-dotNet": "csharp-dotnet.png",
+    "soonvibes": "soonvibes.png",
+    "zend": "zend.png",
+    "html-css-soonvibes": "html-css.png",
+    "js-jquery-soonvibes": "js-jquery.png",
+    "melty": "meltygroup.png",
+    "js-jquery-melty": "js-jquery.png",
+    "html-css-melty": "html-css.png",
+    "php-mysql-melty": "php-mysql.png",
+    "Eurelis": "eurelis.svg",
+    "js-jquery-eurelis": "js-jquery.png",
+    "angularJS": "angularjs.png",
+    "html-css-eurelis": "html-css.png",
+    "drupal-magento": "drupal-magento.png"
+  }
+
 
 
   var spaceBetweenPoints;
   var nextTopPoint;
   var nextBottomPoint;
+  var drawnImages = 0;
 
   var dots = [];
 
   var colors = ['#1ABC9C','#2ECC71','#3498DB','#9B59B6','#F1C40F','#E67E22','#E74C3C'];
   $firstBullet = false;
-  var topPos = 30;
-  var middlePos = 70;
-  var bottomPos = 110;
+  var topPos = 60;
+  var middlePos = 120;
+  var bottomPos = 180;
 
   $xPos = 10;
   $yPos = middlePos;
-  spaceBetweenPoints = 40; 
+  spaceBetweenPoints = 60; 
 
   function drawLine(startX, startY, endY, endX) {
     if (startY > endY) {
@@ -157,12 +180,37 @@ var PopularRepositories = function() {
     canvas_context.stroke();
   }
 
-  function drawBullet(X, Y, radius) {
+  function drawBullet(X, Y, radius, id) {
     if (typeof radius === "undefined") {
       radius = 5;
     }
     canvas_context.beginPath();
     canvas_context.arc(X,Y,radius,0,2*Math.PI);
+    if(typeof(images[id]) !== 'undefined') {
+      var img = new Image();
+      img.drawnImages = drawnImages;
+      
+      img.addEventListener("load", function() {
+        var height = (50 * img.height) / img.width;
+        if((img.drawnImages % 2) != 1 && Y === topPos) {
+          Ypos = Y - (height + 10);
+        }
+        else if((img.drawnImages % 2) != 1 && Y === bottomPos) {
+          Ypos = Y + 10;
+        }
+        else if((img.drawnImages % 2) == 1 && Y === bottomPos) {
+          Ypos = Y - (height + 10);
+        }
+        else if((img.drawnImages % 2) == 1 && Y === topPos) {
+          Ypos = Y + 10;
+        }
+        canvas_context.drawImage(img,X-25,Ypos,50,height);
+      }, false);
+      drawnImages ++;
+      img.src = '../img/' + images[id];
+      
+    }
+
     canvas_context.fill();
   }
 
@@ -188,7 +236,7 @@ var PopularRepositories = function() {
       radius = dots[dotNumber].r;
     }
 
-    drawBullet(startX + spaceBetweenPoints,endY, radius);
+    drawBullet(startX + spaceBetweenPoints,endY, radius, text);
 
     //update positions
     $xPos += spaceBetweenPoints;
@@ -266,7 +314,7 @@ var PopularRepositories = function() {
 
     if(window.devicePixelRatio == 2) {
       canvas.setAttribute('width', 2000);
-      canvas.setAttribute('height', 340);
+      canvas.setAttribute('height', 500);
       canvas_context.scale(2,2);
     }
 
@@ -318,7 +366,7 @@ var PopularRepositories = function() {
             }
             else {
               if($('#canvasContainer').scrollLeft() >= 320) {
-                left = left - (320 - (dot.x - $('#canvasContainer').scrollLeft()));
+                left = dot.x - $('#canvasContainer').scrollLeft() - 320;
               }
               else if ((left - 320) >= 0) {
                 left = left - 320;
