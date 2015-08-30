@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 @import "layout",
     "components/header",
     "components/graph";
@@ -6,14 +19,11 @@
 .btn {
   border: 1px solid #ccc;
   text-decoration: none;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 3px;
   color: #000;
   &:hover {
-    background-image: linear-gradient(#eee, #ddd);
-    background-image: -webkit-linear-gradient(#eee, #ddd);
-    background-image: -moz-linear-gradient(#eee, #ddd);
-    background-repeat: repeat-x;
+    background-color: #f5f5f5;
   }
 }
 
@@ -51,7 +61,7 @@ a {
     font-weight: bold;
     margin-bottom: 5px;
   }
-  a img {
+  a {
     width: 33%;
     border-radius: 5px;
     padding: 15px;
@@ -71,15 +81,15 @@ a {
 
 .bloc {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid #d5d5d5;
   margin-bottom: 20px;
   h2 {
     border-bottom: 1px solid #d5d5d5;
-    border-radius: 5px 5px 0 0;
-    background-image: linear-gradient(#fafafa, #eaeaea);
+    border-radius: 3px 3px 0 0;
+    background-color: #f5f5f5;
     line-height: 30px;
-    padding: 0 10px;
+    padding: 10px;
   }
 }
 

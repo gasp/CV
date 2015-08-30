@@ -103,7 +103,6 @@
 .activity {
   position: relative;
   font-size: 14px;
-  line-height: 16px;
   .btn {
     position: absolute;
     top: -4px;
@@ -160,5 +159,6 @@
 
 .bigIcon {
   font-size: 30px;
+  // width: auto;
   opacity: 0.4;
 }

@@ -17,6 +17,7 @@ app.use(morgan('combined'))
 .use('/node_modules/', express.static(__dirname + '/node_modules'))
 .use('/img/', express.static(__dirname + '/img'))
 .use('/files', express.static(__dirname + '/files'))
+.use('/fonts', express.static(__dirname + '/fonts'))
 // .use(favicon(__dirname + '/public/favicon.ico'))
 .get('/', function(req, res) {
   res.render('index.ejs');
