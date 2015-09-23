@@ -493,6 +493,9 @@ $(function(){
   if($('#popularRepositories').length > 0) {
     var popularRepositories = PopularRepositories();
     var switcher = Switcher();
+    if($(window).width() < 700) {
+      $('#contributionSwitcher button[data-switch="list"]').click();
+    }
     var maxScroll = $("#popularRepositories").width() - $("#canvasContainer").width();
     $('#canvasContainer').scrollLeft(maxScroll);
   }
