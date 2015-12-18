@@ -193,7 +193,7 @@
 						<div>
 							<div>Soonvibes is a young Startup specialised on electronic music. It permits DJs to post their tracks on the website and to receive some feedback on it.</div>
 							<div>
-								Front and Back-end developer. V1 of the website <a href="soonvibes.com" title="soonvibes">soonvibes.com</a> and generic ajax pagination module development. Technologies: HTML, CSS, JS, PHP, MySQL, SVN, Zend Framework.
+								Front and Back-end developer. V1 of the website <a href="http//soonvibes.com" title="soonvibes">soonvibes.com</a> and generic ajax pagination module development. Technologies: HTML, CSS, JS, PHP, MySQL, SVN, Zend Framework.
 							</div>
 						</div>
 
